@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101329">
+    <title>EduPlay — aprende jugando</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar"><a class="brand" href="#"><span class="brand-icon">✳</span> eduplay<span
+                    class="brand-dot">.</span></a>
+            <div class="side-label">TU ESPACIO</div><button class="nav-item selected" id="homeNav"><span>⌂</span>Mi
+                aventura</button><button class="nav-item" id="practiceNav"><span>✦</span>Practicar</button>
+            <div class="sidebar-bottom">
+                <div class="helper-card">
+                    <div class="helper-spark">✦</div><strong>¡Vas genial!</strong>
+                    <p>Cada reto te acerca a tu próxima insignia.</p>
+                </div><button class="nav-item exit" id="exitBtn">↗ Cambiar jugador</button>
+                <div class="version">EDUPLAY · MUNDO DE APRENDIZAJE</div>
+            </div>
+        </aside>
+        <main>
+            <header class="topbar">
+                <div class="crumb">MI ESPACIO <span>/</span> <b>AVENTURA</b></div>
+                <div class="top-right">
+                    <div class="streak-pill">🔥 <span id="streak">0</span> racha</div>
+                    <div class="mini-avatar" id="topAvatar">🐉</div>
+                </div>
+            </header>
+            <section id="welcome" class="welcome">
+                <div class="welcome-copy">
+                    <div class="eyebrow"><i></i> TU VIAJE DE HOY</div>
+                    <h1>¡Hola, <span id="helloName">explorador</span>!<br><em>¿Listo para descubrir?</em></h1>
+                    <p>Un mundo de ideas te espera. Elige una ruta y gana estrellas en cada misión.</p><button
+                        class="primary" id="continueBtn">Continuar aventura <span>↗</span></button>
+                </div>
+                <div class="planet-scene">
+                    <div class="orbit orbit-a"></div>
+                    <div class="orbit orbit-b"></div>
+                    <div class="planet">✦</div>
+                    <div class="float-star star-a">✦</div>
+                    <div class="float-star star-b">✧</div>
+                    <div class="float-planet">◉</div>
+                    <div class="planet-caption">SECTOR 01 <b>·</b> EXPLORACIÓN</div>
+                </div>
+            </section>
+            <section class="stats">
+                <div class="stat">
+                    <div class="stat-icon purple">✧</div>
+                    <div><small>EXPERIENCIA</small><strong><span id="xp">0</span> <small>XP</small></strong></div>
+                    <div class="stat-spark">↗</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon mint">✓</div>
+                    <div><small>RETOS RESUELTOS</small><strong id="answered">0</strong></div>
+                    <div class="stat-spark">✦</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon orange">◎</div>
+                    <div><small>PRECISIÓN</small><strong id="accuracy">—</strong></div>
+                    <div class="stat-spark">↗</div>
+                </div>
+            </section>
+            <section class="level-strip">
+                <div class="level-bubble" id="levelNumber">1</div>
+                <div class="level-copy"><b>Nivel <span id="levelText">1</span> · Explorador</b><small><span
+                            id="levelXp">0</span> / 50 XP para el siguiente nivel</small></div>
+                <div class="level-track"><i id="levelBar"></i></div>
+                <div class="daily-count">☀ <span id="dailyCount">0</span>/3 retos de hoy</div>
+            </section>
+            <section class="section-head">
+                <div>
+                    <div class="eyebrow">ELIGE TU SIGUIENTE PASO</div>
+                    <h2>Rutas de aprendizaje</h2>
+                </div>
+                <div class="tiny-label">3 RUTAS DISPONIBLES <span>✳</span></div>
+            </section>
+            <section class="routes">
+                <article class="route word" data-subject="Palabras">
+                    <div class="route-top">
+                        <div class="route-icon">Aa</div>
+                        <div class="route-tag">LENGUAJE</div>
+                    </div>
+                    <div class="route-art word-art"><span class="letter l1">A</span><span
+                            class="letter l2">ñ</span><span class="letter l3">?</span><span class="word-sun"></span>
+                    </div>
+                    <h3>Palabras mágicas</h3>
+                    <p>Rimas, letras y nuevos mundos por nombrar.</p>
+                    <div class="route-footer"><span><b id="wordsProgress">0</b> retos completados</span><button
+                            class="round-arrow">↗</button></div>
+                </article>
+                <article class="route science" data-subject="Ciencia">
+                    <div class="route-top">
+                        <div class="route-icon">✳</div>
+                        <div class="route-tag">CIENCIA</div>
+                    </div>
+                    <div class="route-art science-art"><span class="atom">⚛</span><span
+                            class="planet-small">◉</span><span class="science-star">✦</span><span
+                            class="science-star two">✧</span></div>
+                    <h3>Pequeños científicos</h3>
+                    <p>Explora la naturaleza y el espacio cercano.</p>
+                    <div class="route-footer"><span><b id="scienceProgress">0</b> retos completados</span><button
+                            class="round-arrow">↗</button></div>
+                </article>
+                <article class="route math" data-subject="Matemáticas">
+                    <div class="route-top">
+                        <div class="route-icon">＋</div>
+                        <div class="route-tag">MATEMÁTICAS</div>
+                    </div>
+                    <div class="route-art math-art"><span class="math-shape shape-one">7</span><span
+                            class="math-shape shape-two">＋</span><span class="math-shape shape-three">3</span><span
+                            class="math-spark">✦</span></div>
+                    <h3>Laboratorio de números</h3>
+                    <p>Resuelve misterios con lógica y cálculo.</p>
+                    <div class="route-footer"><span><b id="mathProgress">0</b> retos completados</span><button
+                            class="round-arrow">↗</button></div>
+                </article>
+            </section>
+            <section class="bottom-note">
+                <div class="note-icon">✦</div>
+                <div><b>Tu progreso te acompaña</b>
+                    <p>Las misiones se adaptan a tu curiosidad. Vuelve cuando quieras y sigue sumando.</p>
+                </div><span class="note-decoration">✧</span>
+            </section>
+            <section class="badge-section">
+                <div>
+                    <div class="eyebrow">TUS LOGROS</div>
+                    <h2>Insignias desbloqueadas</h2>
+                </div>
+                <div id="badgeList" class="badge-list"><span class="empty-badges">Completa tu primer reto para ganar una
+                        insignia ✨</span></div>
+            </section>
+            <footer>HECHO PARA APRENDER · UN RETO A LA VEZ <span>✳</span></footer>
+        </main>
+    </div>
+    <div class="overlay hidden" id="login">
+        <div class="login-card">
+            <div class="login-logo">✳</div>
+            <div class="eyebrow">BIENVENIDO A TU UNIVERSO</div>
+            <h1 id="loginTitle">Tu próxima aventura<br><em>empieza aquí.</em></h1>
+            <p id="loginDescription">Crea tu cuenta para guardar tu nivel, insignias y misiones. Tu contraseña se
+                protege en el servidor.</p>
+            <div class="auth-tabs"><button class="auth-tab active" data-mode="register">Crear cuenta</button><button
+                    class="auth-tab" data-mode="login">Iniciar sesión</button></div>
+            <div id="registerFields">
+                <div class="avatars"><button class="avatar active">🐉</button><button class="avatar">🦊</button><button
+                        class="avatar">🦸</button><button class="avatar">👾</button></div><label for="playerName">NOMBRE
+                    PARA MOSTRAR</label><input id="playerName" placeholder="¿Cómo te llamas?" maxlength="18"
+                    autocomplete="nickname">
+            </div><label for="username">NOMBRE DE USUARIO</label><input id="username" placeholder="Por ejemplo: luna7"
+                maxlength="24" autocomplete="username"><label for="password">CONTRASEÑA · MÍNIMO 8
+                CARACTERES</label><input id="password" type="password" placeholder="Tu contraseña"
+                autocomplete="new-password"><button class="primary full" id="startBtn">Crear mi aventura
+                <span>↗</span></button>
+            <div class="tiny-label center">CUENTA GUARDADA EN ESTE SERVIDOR</div>
+        </div>
+    </div>
+    <div class="overlay hidden" id="quiz">
+        <div class="quiz-card"><button class="close" id="closeQuiz">✕</button>
+            <div class="eyebrow" id="quizLabel">MISIÓN · PALABRAS</div>
+            <div class="quiz-progress"><span id="qCount">RETO 1 DE 3</span>
+                <div><i id="qBar"></i></div>
+            </div>
+            <div class="quiz-symbol" id="quizSymbol">Aa</div>
+            <h2 id="question">Preparando misión…</h2>
+            <div id="options" class="options"></div>
+            <div id="feedback" class="feedback hidden"></div><button id="nextBtn" class="primary full hidden">Siguiente
+                reto <span>→</span></button>
+            <div class="quiz-foot">UNA RESPUESTA A LA VEZ <span>✦</span></div>
+        </div>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
